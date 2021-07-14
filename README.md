@@ -1,6 +1,19 @@
 # In progress
 
 # Spotify_Predict_Hit_Song
+This is the final assignment using DataBricks, from the Data Science & Advanced Analytics course at the Big Data & Analytics Masters @ EAE class of 2021. 
+xxx
+
+Professor:
+- Marta Tolós Rigueiro
+- Pere Miquel Brull Borràs
+- Alberto Villa Manrique
+Team:
+- Romain Baleynaud (GitHub)
+- Henrique Avila
+- Joseph Higaki (GitHub)
+- Raquel Ganuza
+- Ziyad Ashukri
 
 ## Business Understanding 
 ## Architecture
