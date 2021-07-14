@@ -21,5 +21,5 @@
 ![dtout](https://user-images.githubusercontent.com/85830810/125611559-fce9c003-a230-42f4-830e-5f83b179dc8b.png)
 
 ## Summary
-[DSAA_PredictingHitSong_Presentation.pptx](https://github.com/RomainBal/Spotify_Predict_Hit_Song/files/6815496/DSAA_PredictingHitSong_Presentation.pptx)
-[EAE_DSAA_PredictingHitSong.pdf](https://github.com/RomainBal/Spotify_Predict_Hit_Song/files/6815499/EAE_DSAA_PredictingHitSong.pdf)
+- [DSAA_PredictingHitSong_Presentation.pptx](https://github.com/RomainBal/Spotify_Predict_Hit_Song/files/6815496/DSAA_PredictingHitSong_Presentation.pptx)
+- [EAE_DSAA_PredictingHitSong.pdf](https://github.com/RomainBal/Spotify_Predict_Hit_Song/files/6815499/EAE_DSAA_PredictingHitSong.pdf)
