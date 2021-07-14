@@ -8,6 +8,7 @@ Professor:
 - Marta Tolós Rigueiro
 - Pere Miquel Brull Borràs
 - Alberto Villa Manrique
+
 Team:
 - Romain Baleynaud (GitHub)
 - Henrique Avila
