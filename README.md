@@ -1,5 +1,3 @@
-# In progress
-
 # Spotify_Predict_Hit_Song
 This is the final assignment using DataBricks, from the Data Science & Advanced Analytics course at the Big Data & Analytics Masters @ EAE class of 2021. 
 
@@ -34,7 +32,27 @@ holders (which can be record labels, publishers or composers) are paid, then the
 (representatives) and finally the artist.
 So, the question is: how can you increase the revenue per playback on Spotify?
 
-## Architecture
+## Data collection
+Being our primary objective to analyze and predict based on songs, we need song metadata that we can
+interpret in a quantifiable manner. We’re leveraging the great work of signal processing analysis of Echo
+Nest / Spotify.
+
+### Spotify API (Audio features)
+For obtaining song metadata, we’re using Spotify’s Audio Features API (DeveloperSpotify, 2021)
+Spotify’s Audio Features is the cornerstone of Spotify’s recommendation algorithms.
+We will use Spotify’s Track ID, as the main identifier for a song. Using Track ID as input parameter at the
+Audio Features API, will get us 14 attributes that describe a song’s musical characteristics.
+(Developer.Spotify, 2021)
+The best way we found to extract information was using:
+● Python, as programming language
+● Databricks, as platform to run extraction and dataset generation routines
+● Spotipy, as a Python client library to easily query the APIs. (Spotipy, 2021)
+![image](https://user-images.githubusercontent.com/85830810/126797290-19c52d15-4ac0-4734-b3d2-d8d7b1adad8c.png)
+
+### A completer
+### Instagram (Artists features)
+
+## Data architecture
 The outline of how we obtain the data ended up looking like this:
 ![arch](https://user-images.githubusercontent.com/85830810/125612220-286515ad-43fe-4bf0-9d6d-fd8876856765.png)
 
@@ -110,9 +128,6 @@ over the total of our total dataset. For example, we will use to build our model
 target only includes the 100 most popular songs. Then the 500 first, the 750, 1000, 1500 and finally the
 first 2000.
 
-### Hyperparameters
-![mod](https://user-images.githubusercontent.com/85830810/125612518-8b224c54-fa71-4bc9-a14d-fb0927ffec67.png)
-
 ### Outputs
 In order to obtain a vision of the performance of our classification models, we decided to use a
 confusion matrix. In order to illustrate the performance of the classifier based on the values True
@@ -172,6 +187,37 @@ As these programs are not performance-intensive, we could deploy them on top of:
 stop/resume processing time, we could add AWS Spot Instances to the ECS cluster to minimize
 costs.
 
-## Summary
+### Summary
 - [DSAA_PredictingHitSong_Presentation.pptx](https://github.com/RomainBal/Spotify_Predict_Hit_Song/files/6815496/DSAA_PredictingHitSong_Presentation.pptx)
 - [EAE_DSAA_PredictingHitSong.pdf](https://github.com/RomainBal/Spotify_Predict_Hit_Song/files/6815499/EAE_DSAA_PredictingHitSong.pdf)
+
+BIBLIOGRAPHY
+Audioproduccion, 2020. https://www.audioproduccion.com/compania-discografica/
+Billboard Charts, 2021. https://www.billboard.com/charts
+BusinessInsider, 2020. https://www.businessinsider.com/how-much-does-spotify-pay-per-stream
+DeveloperSpotify, 2021.
+https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-audio-features
+Developer.Spotify, 2021.
+https://developer.spotify.com/documentation/web-api/reference/#object-audiofeaturesobject
+Hypeauditor, 2021. https://hypeauditor.com/
+Music Brainz, 2021. https://musicbrainz.org/
+Music Story, 2021. https://www.music-story.com/
+Spotify for Developers, 2021. https://developer.spotify.com/
+Spotipy, 2021.
+https://spotipy.readthedocs.io/en/2.17.1/?highlight=audio%20features#welcome-to-spotipy
+Spotify Charts, 2021. https://spotifycharts.com/
+Flask Web Development Framework, 2021. https://flask.palletsprojects.com/en/2.0.x/
+Mongo DB, 2021. https://www.mongodb.com/1
+Redis In-Memory Data Store, 2021. https://redis.io/
+AWS Lambda, 2021. https://docs.aws.amazon.com/lambda/index.html
+Azure Functions, 2021. https://docs.microsoft.com/en-us/azure/azure-functions/
+AWS Simple Storage Service S3, 2021.
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
+Pickle, object serialization for Python, 2021. https://docs.python.org/3/library/pickle.html
+AWS Elastic Container Service, 2021.
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html
+AWS Spot Instances, 2021.
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html
+Adding AWS Spot instances to an ECS cluster to minimize costs, 2017.
+https://aws.amazon.com/blogs/compute/powering-your-amazon-ecs-cluster-with-amazon-ec2-spot-inst
+ances/#:~:text=The%20ECS%20console%20uses%20Spot,the%20best%20prices%20for%20you.
