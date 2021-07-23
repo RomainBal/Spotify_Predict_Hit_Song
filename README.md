@@ -1,18 +1,6 @@
 # Spotify_Predict_Hit_Song
 This is the final assignment using DataBricks, from the Data Science & Advanced Analytics course at the Big Data & Analytics Masters @ EAE class of 2021. 
 
-Professor:
-- Marta Tolós Rigueiro
-- Pere Miquel Brull Borràs
-- Alberto Villa Manrique
-
-Team:
-- Romain Baleynaud (GitHub)
-- Henrique Avila
-- Joseph Higaki (GitHub)
-- Raquel Ganuza
-- Ziyad Ashukri
-
 ## Business Understanding
 The music industry generates $21.5 Billion per year. Other than the revenue it generates, music touches
 each and everyone of us on a personal level. More importantly, the music industry is a crowded industry,
@@ -32,6 +20,7 @@ holders (which can be record labels, publishers or composers) are paid, then the
 (representatives) and finally the artist.
 So, the question is: how can you increase the revenue per playback on Spotify?
 
+
 ## Data collection
 Being our primary objective to analyze and predict based on songs, we need song metadata that we can
 interpret in a quantifiable manner. We’re leveraging the great work of signal processing analysis of Echo
@@ -44,17 +33,22 @@ We will use Spotify’s Track ID, as the main identifier for a song. Using Track
 Audio Features API, will get us 14 attributes that describe a song’s musical characteristics.
 (Developer.Spotify, 2021)
 The best way we found to extract information was using:
+
 ● Python, as programming language
+
 ● Databricks, as platform to run extraction and dataset generation routines
+
 ● Spotipy, as a Python client library to easily query the APIs. (Spotipy, 2021)
+
 ![image](https://user-images.githubusercontent.com/85830810/126797290-19c52d15-4ac0-4734-b3d2-d8d7b1adad8c.png)
 
-### A completer
 ### Instagram (Artists features)
+
 
 ## Data architecture
 The outline of how we obtain the data ended up looking like this:
 ![arch](https://user-images.githubusercontent.com/85830810/125612220-286515ad-43fe-4bf0-9d6d-fd8876856765.png)
+
 
 ## Data understanding
 From the three sources of information from which we have extracted our data, we have obtained a total
@@ -74,7 +68,8 @@ due to the quality of the data may be the following:
 – duplicates
 We will deal with these problems in the data cleansing part.
 
-## Models creations
+
+## Models creation
 First, to describe the sample that participated in our study, we will carry out a univariate analysis using
 descriptive statistics. We will focus on two of them: measures of central tendency (mean, median,
 mode...) and measures of dispersion (standard deviation). For qualitative or categorical variables, we will
@@ -149,6 +144,7 @@ is not yet satisfactory but we can see that we are on the right track and that w
 and new parameters we will undoubtedly be able to make our model more precise on the Top Songs
 restriction.
 
+
 ## Model evolution
 Our dataset labels are based on song popularity, which at this moment we are capturing through weekly
 stream count charts from Spotify.
@@ -156,22 +152,27 @@ In our first review and iteration of the models, we will not automate the model 
 believe it is important to do a manual review of the datasets we’re feeding for re-train.
 At this first stage, the manual model review will be done between 5 to 15 weeks. This frequency has
 been determined because:
+
 ● 5 weeks is the Median from the weeks variable from our initial dataset. This means that more
 than 50% of our initial sample will be 5 weeks or less on a top chart.
+
 ● 15 weeks is the Average from the weeks variable from our initial dataset.
 We acknowledge that the weeks variable does not mean consecutive weeks, which could’ve been a
 better source of information to determine model re-evaluation frequency, but it is the best-informed
 value we are willing to take to determine re-evaluation frequency.
+
 ![image](https://user-images.githubusercontent.com/85830810/126796084-76d971b9-000f-4b16-953f-9400389ec6c1.png)
 
 ### Scrap Charts
 In our MVP (Minimum Viable Product) at the DSAA course deliverable, we have parsed KWORB charts,
 using excel and a text editor. We will use python web-scrapping libraries to ease this task. That way we can upload the output directly
 to our databricks instance for later analysis.
+
 ### Train Models
 Model Training will be done in python using Apache Spark in Databricks.
 In this first stage, Databricks notebooks will not be compiled into Jobs for automation. Manual
 intervention from the Data Scientist will be needed to act on any manual data cleaning if needed.
+
 ### Trained Models
 Once the models are fit and tested with multiple hyperparameter combinations. The Data scientist will
 determine which ones are eligible for production deployment. Fit models will be serialized using Pickle,
@@ -191,33 +192,9 @@ costs.
 - [DSAA_PredictingHitSong_Presentation.pptx](https://github.com/RomainBal/Spotify_Predict_Hit_Song/files/6815496/DSAA_PredictingHitSong_Presentation.pptx)
 - [EAE_DSAA_PredictingHitSong.pdf](https://github.com/RomainBal/Spotify_Predict_Hit_Song/files/6815499/EAE_DSAA_PredictingHitSong.pdf)
 
-BIBLIOGRAPHY
-Audioproduccion, 2020. https://www.audioproduccion.com/compania-discografica/
-Billboard Charts, 2021. https://www.billboard.com/charts
-BusinessInsider, 2020. https://www.businessinsider.com/how-much-does-spotify-pay-per-stream
-DeveloperSpotify, 2021.
-https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-audio-features
-Developer.Spotify, 2021.
-https://developer.spotify.com/documentation/web-api/reference/#object-audiofeaturesobject
-Hypeauditor, 2021. https://hypeauditor.com/
-Music Brainz, 2021. https://musicbrainz.org/
-Music Story, 2021. https://www.music-story.com/
-Spotify for Developers, 2021. https://developer.spotify.com/
-Spotipy, 2021.
-https://spotipy.readthedocs.io/en/2.17.1/?highlight=audio%20features#welcome-to-spotipy
-Spotify Charts, 2021. https://spotifycharts.com/
-Flask Web Development Framework, 2021. https://flask.palletsprojects.com/en/2.0.x/
-Mongo DB, 2021. https://www.mongodb.com/1
-Redis In-Memory Data Store, 2021. https://redis.io/
-AWS Lambda, 2021. https://docs.aws.amazon.com/lambda/index.html
-Azure Functions, 2021. https://docs.microsoft.com/en-us/azure/azure-functions/
-AWS Simple Storage Service S3, 2021.
-https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
-Pickle, object serialization for Python, 2021. https://docs.python.org/3/library/pickle.html
-AWS Elastic Container Service, 2021.
-https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html
-AWS Spot Instances, 2021.
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html
-Adding AWS Spot instances to an ECS cluster to minimize costs, 2017.
-https://aws.amazon.com/blogs/compute/powering-your-amazon-ecs-cluster-with-amazon-ec2-spot-inst
-ances/#:~:text=The%20ECS%20console%20uses%20Spot,the%20best%20prices%20for%20you.
+## Team:
+- Romain Baleynaud (GitHub)
+- Henrique Avila
+- Joseph Higaki (GitHub)
+- Raquel Ganuza
+- Ziyad Ashukri
